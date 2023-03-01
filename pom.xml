@@ -16,7 +16,7 @@
 	<properties>
 		<java.version>11</java.version>
 	</properties>
-	<dependencies>
+	<dependencies >
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -36,7 +36,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-		<finalName>ci-cd-jenkins</finalName>
+		<finalName>ci-cd-jenkins-pipeline</finalName>
 	</build>
 
 </project>
