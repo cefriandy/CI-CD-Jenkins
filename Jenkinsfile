@@ -25,9 +25,16 @@ pipeline{
                     withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhub')]) {
                     // bat 'docker logout'
                     bat "docker login -u cefriandy -p ${dockerhub}"
-}
+                    }
                 }
                 bat 'docker push cefriandy/ci-cd-jenkins-pipeline'
+            }
+        }
+        stage('Deploy to kubernetes cluster'){
+            steps{
+                script{
+                    kubernetesDeploy configs: '', kubeConfig: [path: ''], kubeconfigId: 'kubernetespwd', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
+                }
             }
         }
     }

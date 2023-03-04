@@ -12,7 +12,7 @@ public class CicdApplication {
 
 	@GetMapping(value = "/greetings")
 	public String welcome(){
-		return "this is for jenkins test porpose";
+		return "I have Completed this stage";
 	}
 
 	public static void main(String[] args) {
